@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+
+    <title>Public Charge Benefits</title>
+    <meta content="Find out what benefits you are eligible to use under proposed changes to public charge rulings" name="description">
+    <link href="style.css" rel="stylesheet">
+    <script async="" src="quiz.js" type="text/javascript"></script>
+
+    <section class="quiz-section quiz-fullscreen section section-dark" id="quiz">
+
+        <div class="container">
+
+            <div id ="introbox1" class="quizintrobox">
+                <p><b>Find out what benefits you are eligible to use under proposed changes to public charge rulings. No personal information will be stored.</p>
+           
+                <button class="button_header" id="startQuizBtn" onclick="startQuiz();document.getElementById('footer');" type="button">Start Screening</button>
+			</div>
+        </div>
+
+    <section class="section" id="questions">
+        <div class="container" id="charge_brief">
+        </div>
+
+        <div class="container" id="quiz-questions">
+					
+            <div class="question invisible" id="question-1">
+                <form>
+                    <h2 class="section-heading text-center">Do you already have a green card?</h2>
+                    <p style="font-style: italic"></p>
+                   
+                    <p style="font-style: italic"></p>
+                    <input data-endingsentence="Public charge doesn't apply to you. But, if you use cash benefits and plan to leave the country for more than 6 months, it is a good idea to talk with an immigration attorney. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">Yes 
+                    <input data-endingsentence="" name="rq" onclick="setAnswerButton()" type="radio">No
+                </form>
+            </div>
+
+
+            <div class="question invisible" id="question-2">
+                <form>
+                    <h2 class="section-heading text-center">Are any of the following your current legal status, or are you currently applying for any?</h2>
+
+
+                    <p style="font-style: italic">These specific circumstances can help determine whether public charge applies </p>
+                    <input data-endingsentence="Public charge doesn't apply to you since you are applying for citizenship. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">Citizenship
+                    <input data-endingsentence="Public charge doesn't apply to you since you are applying for green card renewal. You may use any benefits for which you qualify.  " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">Green Card renewal
+                    <input data-endingsentence="Public charge doesn't apply to you since you are applying for DACA renewal. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">DACA renewal
+                  <input data-endingsentence="Public charge doesn't apply to you since you are applying for a U or T Visa. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">U or T Visa
+                    <input data-endingsentence="Public charge doesn't apply to you since you are applying for Asylum or Refugee Status. You may use any benefits for which you qualify." name="rq" onclick="setAnswerButton();endQuiz()" type="radio">Asylum or Refugee Status
+                    <input data-endingsentence="Public charge doesn't apply to you since you are applying for TPS. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">TPS
+                    <input data-endingsentence="Public charge doesn't apply to you since you are applying for VAWA. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">VAWA
+                    <input data-endingsentence="Public charge doesn't apply to you since you are applying for Special Immigrant Juvenile Status. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">Special Immigrant Juvenile Status
+                    <input data-endingsentence="Public charge doesn't apply to you since you are applying for a green card based on U/T visa, VAWA or Asylum. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">Green Card based on U/T visa, VAWA, or Asylum
+                    <input data-endingsentence="" name="rq" onclick="setAnswerButton();" type="radio">None of the above                 
+
+                </form>
+            </div>
+
+
+            <div class="question invisible" id="question-3">
+                <form>
+                    <h2 class="section-heading text-center">Where do you or your family plan to apply for a green card or visa from?</h2>
+
+
+                    <p style="font-style: italic">Where you or family apply from can have consequences on how public charge affects you</p>
+                    <input data-endingsentence="
+                                                A public charge test may apply, but only a few benefits that an applicant receives would be at risk. It is still safe to get Medi-Cal and CalFresh/food stamp benefits. Eligible family members can use any benefits. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">Inside the U.S.
+                    <input data-endingsentence="
+                                                A public charge test applies in this situation, but only some benefits would be counted. Talk to a qualified attorney about this. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio"> Outside the U.S.
+
+                </form>
+            </div>
+
+            <div class="invisible" id="confirm_answer">
+                <br>
+                <br>
+                <button class="button" onclick="nextQuestion()" type="button">Next Question</button>
+            </div>
+
+
+            <div class="invisible" id="results_screen">
+                <h2 class="section-heading text-center">How will public charge affect you?</h2>
+					<div id="generated_text">
+           
+					</div>
+
+           <p>   
+              <br>
+                <ins>More on public charge</ins>
+              <br>
+             Benefits currently considered for public charge include:
+  <ul style="list-style-type:none;">
+  <li>SSI</li>
+  <li>General Assistance</li>
+  <li>CalWORKS</li>
+  <li>CAPI</li>
+</ul> 
+Additionally, long-term Medi-Cal care such as nursing homes will be considered. 
+
+<br>Proposed changes to public charge will likely consider:
+  <ul style="list-style-type:none;">
+  <li>CalFresh/food stamps</li>
+  <li>Non-emergency Medi-Cal</li>
+  <li> Federal housing/Section 8</li>
+</ul> <br>
+   These changes might never be made. If they are, you will have time to stop these benefits before they are in place.
+            </p>
+          <a
+       href="https://www.immigrationadvocates.org/nonprofit/legaldirectory/search?state=CA" style="color: rgb(50,0,400)"> Click here to see a list of legal services programs </a>
+          <br>
+          <a
+       href="https://www.legalaidsmc.org/contact" > Click here to contact the Legal Aid office </a>
+          <br>                                                           
+          <a
+       href="https://forms.gle/yr32nwuH3evxbxCN7"> Click here to be informed when changes are made to the public charge ruling</a>        
+            </div>
+    
+        </div>
+    </section>
+
+
+    <section class="footer-section section" id="footer">
+        <div class="container">
+            <div class="footer-copyright">
+                <ul class="list-inline right">
+                    <li>
+                        <p></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</head>
+
+</html>
