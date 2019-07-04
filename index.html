@@ -244,7 +244,8 @@
 			  opacity: 1;
 			}
 			
-			radio {
+			#non-greencard-status input {
+				color: red;
 				vertical-align: middle;
 				margin: 0px;
 			}
@@ -458,7 +459,7 @@ function setEndingSentence() {
 							<h2 class="section-heading text-center">Do you have, or are you currently applying for any of the following?</h2>
 
 							<p style="font-style: italic">These specific categories determine whether public charge applies </p>
-							<input data-endingsentence="Public charge doesn't apply to you since you are applying for citizenship. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">Citizenship
+							<input data-endingsentence="Public charge doesn't apply to you since you are applying for citizenship. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">Citizenship<br>
 							<input data-endingsentence="Public charge doesn't apply to you since you are applying for green card renewal. You may use any benefits for which you qualify. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">Green Card renewal<br>
 							<input data-endingsentence="Public  charge doesn’t apply for DACA renewal applications or to people who have DACA when they adjust status under this category. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">DACA renewal<br>
 							<input data-endingsentence="Public  charge doesn’t apply for U or T Visa applications or to people who have U or T visas when they adjust status under this category. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">U or T Visa<br>
