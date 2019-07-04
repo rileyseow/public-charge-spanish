@@ -72,7 +72,7 @@ html,body {
 	text-align: middle;
 }
 
- .h1, .h2, .h3, .h4, .h5, .h6 {
+ .h1, .h2, .h3, .h4, .h5, .h6{
 	color: #222;
 	margin-bottom: 10px;
 	line-height: 1.0;
@@ -139,13 +139,16 @@ html,body {
 /* footer */ 
 
 .list-inline {
-    list-style: outside none none;
+    list-style: outside none;
     margin-left: -5px;
     padding-left: 0;
+    list-style-position: left;
 }
 
 ul {
-    list-style-position: inside;
+    list-style-position: outside;
+    display: inline-block;
+    text-align:left;
 }
 
 .questions {
@@ -186,4 +189,44 @@ margin-left: auto;
 margin-right: auto;
 padding-left: 15px;
 padding-right: 15px;
+}
+
+/*hover */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

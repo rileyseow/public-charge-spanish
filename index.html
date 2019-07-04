@@ -2,140 +2,173 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  
-<head>
-    <meta content="text/html; charset=utf-8" http-equiv="content-type">
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
 
-    <title>Public Charge Benefits</title>
-    <meta content="Find out what benefits you are eligible to use under proposed changes to public charge rulings" name="description">
-    <link href="style.css" rel="stylesheet">
-    <script async="" src="quiz.js" type="text/javascript"></script>
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="content-type">
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
 
-    <section class="quiz-section quiz-fullscreen section section-dark" id="quiz">
+		<title>Public Charge Benefits</title>
+		<meta content="Find out what benefits you are eligible to use under proposed changes to public charge rulings" name="description">
+		<link href="style.css" rel="stylesheet">
+		<script async="" src="quiz.js" type="text/javascript"></script>
 
-        <div class="container">
+		<section class="quiz-section quiz-fullscreen section section-dark" id="quiz">
 
-            <div id ="introbox1" class="quizintrobox">
-                <p><b>Find out what benefits you are eligible to use under proposed changes to public charge rulings. No personal information will be stored.</p>
-           
-                <button class="button_header" id="startQuizBtn" onclick="startQuiz();document.getElementById('footer');" type="button">Start Screening</button>
+			<div class="container">
+
+				<div id ="introbox1" class="quizintrobox">
+					<p><b>Find out what benefits you are eligible to use under proposed changes to public charge rulings. No personal information will be stored.</b></p>
+
+						<button class="button_header" id="startQuizBtn" onclick="startQuiz();document.getElementById('footer');" type="button">Start Screening</button>
+				</div>
 			</div>
-        </div>
 
-    <section class="section" id="questions">
-        <div class="container" id="charge_brief">
-        </div>
+			<section class="section" id="questions">
+				<div class="container" id="charge_brief">
+				</div>
 
-        <div class="container" id="quiz-questions">
-					
-            <div class="question invisible" id="question-1">
-                <form>
-                    <h2 class="section-heading text-center">Do you already have a green card?</h2>
-                    <p style="font-style: italic"></p>
-                   
-                    <p style="font-style: italic"></p>
-                    <input data-endingsentence="Public charge doesn't apply to you. But, if you use cash benefits and plan to leave the country for more than 6 months, it is a good idea to talk with an immigration attorney. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">Yes 
-                    <input data-endingsentence="" name="rq" onclick="setAnswerButton()" type="radio">No
-                </form>
-            </div>
+				<div class="container" id="quiz-questions">
 
+					<div class="question invisible" id="question-1">
+						<form>
+							<h2 class="section-heading text-center">Do you already have a green card?</h2>
+							<p style="font-style: italic"></p>
 
-            <div class="question invisible" id="question-2">
-                <form>
-                    <h2 class="section-heading text-center">Are any of the following your current legal status, or are you currently applying for any?</h2>
-
-
-                    <p style="font-style: italic">These specific circumstances can help determine whether public charge applies </p>
-                    <input data-endingsentence="Public charge doesn't apply to you since you are applying for citizenship. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">Citizenship
-                    <input data-endingsentence="Public charge doesn't apply to you since you are applying for green card renewal. You may use any benefits for which you qualify.  " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">Green Card renewal
-                    <input data-endingsentence="Public charge doesn't apply to you since you are applying for DACA renewal. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">DACA renewal
-                  <input data-endingsentence="Public charge doesn't apply to you since you are applying for a U or T Visa. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">U or T Visa
-                    <input data-endingsentence="Public charge doesn't apply to you since you are applying for Asylum or Refugee Status. You may use any benefits for which you qualify." name="rq" onclick="setAnswerButton();endQuiz()" type="radio">Asylum or Refugee Status
-                    <input data-endingsentence="Public charge doesn't apply to you since you are applying for TPS. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">TPS
-                    <input data-endingsentence="Public charge doesn't apply to you since you are applying for VAWA. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">VAWA
-                    <input data-endingsentence="Public charge doesn't apply to you since you are applying for Special Immigrant Juvenile Status. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">Special Immigrant Juvenile Status
-                    <input data-endingsentence="Public charge doesn't apply to you since you are applying for a green card based on U/T visa, VAWA or Asylum. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">Green Card based on U/T visa, VAWA, or Asylum
-                    <input data-endingsentence="" name="rq" onclick="setAnswerButton();" type="radio">None of the above                 
-
-                </form>
-            </div>
-
-
-            <div class="question invisible" id="question-3">
-                <form>
-                    <h2 class="section-heading text-center">Where do you or your family plan to apply for a green card or visa from?</h2>
-
-
-                    <p style="font-style: italic">Where you or family apply from can have consequences on how public charge affects you</p>
-                    <input data-endingsentence="
-                                                A public charge test may apply, but only a few benefits that an applicant receives would be at risk. It is still safe to get Medi-Cal and CalFresh/food stamp benefits. Eligible family members can use any benefits. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio">Inside the U.S.
-                    <input data-endingsentence="
-                                                A public charge test applies in this situation, but only some benefits would be counted. Talk to a qualified attorney about this. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio"> Outside the U.S.
-
-                </form>
-            </div>
-
-            <div class="invisible" id="confirm_answer">
-                <br>
-                <br>
-                <button class="button" onclick="nextQuestion()" type="button">Next Question</button>
-            </div>
-
-
-            <div class="invisible" id="results_screen">
-                <h2 class="section-heading text-center">How will public charge affect you?</h2>
-					<div id="generated_text">
-           
+							<p style="font-style: italic"></p>
+							<input data-endingsentence="Public charge doesn’t apply to you unless you leave the U.S. for more than 6 months.  Public charge does not affect applications for citizenship. Talk to an immigration attorney if you plan to leave for 6 months or more." name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">Yes 
+							<input data-endingsentence="" name="rq" onclick="setAnswerButton()" type="radio">No
+						</form>
 					</div>
 
-           <p>   
-              <br>
-                <ins>More on public charge</ins>
-              <br>
-             Benefits currently considered for public charge include:
-  <ul style="list-style-type:none;">
-  <li>SSI</li>
-  <li>General Assistance</li>
-  <li>CalWORKS</li>
-  <li>CAPI</li>
-</ul> 
-Additionally, long-term Medi-Cal care such as nursing homes will be considered. 
 
-<br>Proposed changes to public charge will likely consider:
-  <ul style="list-style-type:none;">
-  <li>CalFresh/food stamps</li>
-  <li>Non-emergency Medi-Cal</li>
-  <li> Federal housing/Section 8</li>
-</ul> <br>
-   These changes might never be made. If they are, you will have time to stop these benefits before they are in place.
-            </p>
-          <a
-       href="https://www.immigrationadvocates.org/nonprofit/legaldirectory/search?state=CA" style="color: rgb(50,0,400)"> Click here to see a list of legal services programs </a>
-          <br>
-          <a
-       href="https://www.legalaidsmc.org/contact" > Click here to contact the Legal Aid office </a>
-          <br>                                                           
-          <a
-       href="https://forms.gle/yr32nwuH3evxbxCN7"> Click here to be informed when changes are made to the public charge ruling</a>        
-            </div>
-    
-        </div>
-    </section>
+					<div class="question invisible" id="question-2">
+						<form>
+							<h2 class="section-heading text-center">Do you have, or are you currently applying for any of the following?</h2>
+
+							<p style="font-style: italic">These specific categories determine whether public charge applies </p>
+							<input data-endingsentence="Public charge doesn't apply to you since you are applying for citizenship. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">Citizenship
+							<input data-endingsentence="Public charge doesn't apply to you since you are applying for green card renewal. You may use any benefits for which you qualify. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">Green Card renewal
+							<input data-endingsentence="Public  charge doesn’t apply for DACA renewal applications or to people who have DACA when they adjust status under this category. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">DACA renewal
+							<input data-endingsentence="Public  charge doesn’t apply for U or T Visa applications or to people who have U or T visas when they adjust status under this category. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">U or T Visa
+							<input data-endingsentence="Public  charge doesn’t apply for Asylum or Refugee applications or to people who have Asylum or Refugee status when they adjust status under this category. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">Asylum or Refugee Status
+							<input data-endingsentence="Public  charge doesn’t apply for TPS applications or to people who have TPS status when they adjust status under this category. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">TPS
+							<input data-endingsentence="Public  charge doesn’t apply for VAWA applications or to people who have VAWA status when they adjust status under this category. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">VAWA
+							<input data-endingsentence="Public  charge doesn’t apply for Special Immigrant Juvenile Status applications or to people who have Special Immigrant Juvenile status when they adjust status under this category. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">Special Immigrant Juvenile Status
+							<input data-endingsentence="Public  charge doesn’t apply for Special Immigrant Visa applications or to people who have a Special Immigrant visa when they adjust status under this category. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">Special Immigrant Visa Status
+							<input data-endingsentence="Public  charge doesn’t apply for Green Card applications based on U/T visa, VAWA, or Asylum or to people who have Green Cards when they adjust status under this category. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">Green Card based on U/T visa, VAWA, or Asylum
+							<input data-endingsentence="Public  charge doesn’t apply for NACARA applications or to people who have NACARA status when they adjust status under this category.You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">Adjustment Under Nicaraguan Adjustment & Central American Relief Act (NACARA)
+							<input data-endingsentence="Public  charge doesn’t apply for HAIFA applications or to people who have HAIFA status when they adjust status under this category.You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> Adjustment Under Haitian Refugee Immigration Fairness Act (HAIFA)
+							<input data-endingsentence="Public  charge doesn’t apply for CAA applications or to people who have CAA status when they adjust status under this category.You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> Adjustment Under Cuban Adjustment Act (CAA)
+							<input data-endingsentence="" name="rq" onclick="setAnswerButton();" type="radio">None of the above                 
+
+						</form>
+					</div>
 
 
-    <section class="footer-section section" id="footer">
-        <div class="container">
-            <div class="footer-copyright">
-                <ul class="list-inline right">
-                    <li>
-                        <p></p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-</head>
+					<div class="question invisible" id="question-3">
+						<form>
+							<h2 class="section-heading text-center">Where do you or your family plan to apply for a green card or visa from?</h2>
 
-</html>
+
+							<p style="font-style: italic">Where you or family apply from can have consequences on how public charge affects you</p>
+							<input data-endingsentence="
+														A public charge test may apply, but only a few benefits that an applicant receives would count. It is still safe to get Medi-Cal and CalFresh/food stamp benefits. Eligible family members can use any benefits for which they qualify. Use of certain benefits is only one factor. In this situation, immigration will also consider your health, age, education, skills, employment, current income and sponsor’s income when deciding if you will be a public charge" name="rq" onclick="setAnswerButton();endQuiz()" type="radio">Inside the U.S.
+							<input data-endingsentence="
+														A public charge test applies in this situation. Talk to a qualified attorney about this. " name="rq" onclick="setAnswerButton();endQuiz()" type="radio"> Outside the U.S.
+
+						</form>
+					</div>
+
+					<div class="invisible" id="confirm_answer">
+						<br>
+						<br>
+						<button class="button" onclick="nextQuestion()" type="button">Next Question</button>
+					</div>
+
+
+					<div class="invisible" id="results_screen">
+						<h2 class="section-heading text-center">How will public charge affect you?</h2>
+
+						<div id="generated_text">           
+						</div>
+						<section class="endpage" id="info_screen"> 
+							<p>   
+								<br>
+								<ins>More on public charge</ins>
+								<br>
+							<div style="text-align:left">
+								<section> 
+									<br> Benefits currently considered for public charge include:  <br> 
+									<ul>
+										<li><div class="tooltip">SSI
+											<span class="tooltiptext">Supplemental Security Income provides cash to meet basic needs for aged, blind, and disabled people, who have little or no income .</span>
+											</div></li>
+
+										<li><div class="tooltip">General Assistance
+											<span class="tooltiptext">A welfare program that benefit adults without dependents.</span>
+											</div></li>
+
+										<li><div class="tooltip">CalWORKS
+											<span class="tooltiptext">CalWORKs is a public assistance program that provides cash aid and services to eligible families that have a child(ren) in the home. </span> </div></li>
+
+										<li><div class="tooltip">CAPI
+											<span class="tooltiptext">Cash Assistance Program for Immigrants is a program that provides money to people who can’t get SSI because of their immigration status. You must be an aged, blind, or disabled California resident. </span> </div></li>
+
+										<li>Long-term care paid by Medicaid, such as nursing homes</li>
+
+									</ul>
+									<section>
+										Use of certain benefits is only one factor.  Immigration will also consider your health, age, education, skills, employment, current income and sponsor’s income when deciding if you will be a public charge.
+									</section>
+								</section>
+
+								<section>
+
+									<br>Proposed changes to public charge will likely consider: <br>
+									<ul>
+										<li> <div class="tooltip">SNAP/food stamps
+											<span class="tooltiptext">SNAP is a federal nutrition program that can be used to purchase food. SNAP benefits are given to you each month on an EBT plastic card.</span>
+											</div> </li>
+										<li>Non-emergency Medicaid</li>
+										<li> <div class="tooltip">Federal housing/Section 8
+											<span class="tooltiptext">A program providing financial assistance for any housing that meets the requirements of the program.</span>
+											</div></li>
+										<li> <div class="tooltip">Medicare Part D subsidies
+											<span class="tooltiptext">Medicare Part D is a voluntary prescription drug benefit for people with Medicare, provided through private plans approved by the federal government. It can supplement Medicare.</span>
+											</div></li>
+									</ul> 
+								</section>
+
+							</div>
+
+							<section>
+								These changes might never be made. If they are, you will have time to stop these benefits before they are in place.
+								</p>
+							<a href="https://www.immigrationadvocates.org/nonprofit/legaldirectory/search?state=CA" style="color: rgb(50,0,400)">Click here to see a list of legal services programs</a>
+							<br>
+							<a
+							   href="https://www.legalaidsmc.org/contact" > Click here to contact the Legal Aid office </a>
+							<br>                                                           
+							<a
+							   href="https://forms.gle/yr32nwuH3evxbxCN7"> Click here to be informed when changes are made to the public charge ruling</a>        
+
+
+							</div>
+						</section>
+					</section>
+
+				<section class="footer-section section" id="footer">
+					<div class="container">
+						<div class="footer-copyright">
+							<ul class="list-inline right">
+								<li>
+									<p></p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				</head>
+
+			</html>

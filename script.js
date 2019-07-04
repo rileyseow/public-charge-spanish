@@ -4,8 +4,6 @@
 //             needed is a basic understanding of HTML and some creativity. 
 
 
-
-
 var currentQuestion = 2; //
 
 
@@ -17,26 +15,30 @@ var currentQuestion = 2; //
 	returns: none
 */
 function startQuiz() {
-        document.getElementById("charge_brief").className = "invisible";
-        document.getElementById("question-1").className = "question";
-        var startBtn = document.getElementById('startQuizBtn');
-        startBtn.parentNode.removeChild(startBtn);
-          var x = document.getElementById("introbox1");
-        if (x.style.display === "none") {
-          x.style.display = "block";
-        } else {
-          x.style.display = "none";
-        }
-    }
-	
+	document.getElementById("charge_brief").className = "invisible";
+	document.getElementById("question-1").className = "question";
+	var startBtn = document.getElementById('startQuizBtn');
+	startBtn.parentNode.removeChild(startBtn);
+	var x = document.getElementById("introbox1");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
 function endQuiz(){
-            var x = document.getElementById("quiz-questions");
-            var y= document.getElementById("results_screen");
-        if (x.style.display === "none") {
-          x.style.display = "block";
-        } else {
-          currentQuestion+=3;        
-        }
+	var x = document.getElementById("quiz-questions");
+	var y= document.getElementById("results_screen");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		currentQuestion=4;        
+	}
+}
+
+function endQuizPositive(){
+	currentQuestion=7;        
 }
 /* 
 	name: getNumberOfQuestions
@@ -46,12 +48,11 @@ function endQuiz(){
     returns: totalQuestions
 */
 function getNumberOfQuestions() {
-        //QuerySelectorAll has better browser support in exchange for being slightly slower than gEBCN. 
-        var totalQuestions = document.querySelectorAll('#quiz-questions .question').length;
-        return totalQuestions;
-    }
-	
-	
+	//QuerySelectorAll has better browser support in exchange for being slightly slower than gEBCN. 
+	var totalQuestions = document.querySelectorAll('#quiz-questions .question').length;
+	return totalQuestions;
+}
+
 
 /* 
 	name: nextQuestion
@@ -61,12 +62,12 @@ function getNumberOfQuestions() {
     returns: none
 */
 function nextQuestion() {
-        hideQuestion(currentQuestion);
-        hideAnswerButton();
-        showQuestion(currentQuestion);
-        currentQuestion++;
-    }
-	
+	hideQuestion(currentQuestion);
+	hideAnswerButton();
+	showQuestion(currentQuestion);
+	currentQuestion++;
+}
+
 
 /* 
 	name: setAnswerButton
@@ -76,11 +77,10 @@ function nextQuestion() {
     returns: none
 */
 function setAnswerButton() {
-        //yes, that's correct. this is my lazy way of input validation without annoyning users 
-        //(e.g. transition on-click events) on the radio buttons...
-        document.getElementById("confirm_answer").className = "";
-    }
-
+	//yes, that's correct. this is my lazy way of input validation without annoyning users 
+	//(e.g. transition on-click events) on the radio buttons...
+	document.getElementById("confirm_answer").className = "";
+}
 
 
 /* 
@@ -91,10 +91,9 @@ function setAnswerButton() {
     returns: none
 */
 function hideAnswerButton() {
-        document.getElementById("confirm_answer").className = "invisible";
-    }	
-	
-	
+	document.getElementById("confirm_answer").className = "invisible";
+}	
+
 
 /* 
 	name: hideQuestion
@@ -104,16 +103,15 @@ function hideAnswerButton() {
     returns: none
 */
 function hideQuestion(id) {
-        var totalQuestions = getNumberOfQuestions();
-        for (var i = 1; i <= totalQuestions; i++) {
-            if (i !== id) {
-                document.getElementById("question-" + i).className = "question invisible";
-            }
-        }
-    }
+	var totalQuestions = getNumberOfQuestions();
+	for (var i = 1; i <= totalQuestions; i++) {
+		if (i !== id) {
+			document.getElementById("question-" + i).className = "question invisible";
+		}
+	}
+}
 
 
-	
 /* 
 	name: showQuestion
 	desc: Will identify current question using ID parameter and
@@ -122,13 +120,13 @@ function hideQuestion(id) {
     returns: none
 */
 function showQuestion(id) {
-        var totalQuestions = getNumberOfQuestions();
-        if (id <= totalQuestions) {
-            document.getElementById("question-" + id).className = "question";
-        } else {
-			setEndingSentence() //begins the end screen process if id is above total question
-        }
-    }
+	var totalQuestions = getNumberOfQuestions();
+	if (id <= totalQuestions) {
+		document.getElementById("question-" + id).className = "question";
+	} else {
+		setEndingSentence() //begins the end screen process if id is above total question
+	}
+}
 
 
 
@@ -139,16 +137,15 @@ function showQuestion(id) {
     returns: content
 */
 function getEndingSentence() {
-    var quizRadio = document.getElementsByName("rq");
+	var quizRadio = document.getElementsByName("rq");
 	var content = ''; //It's easier to handle if we simply merge all sentences into a string
-    for (var i = 0; i < quizRadio.length; i++) {
-        if (quizRadio[i].checked) {
-            content += quizRadio[i].getAttribute("data-endingsentence"); //these are the attributes used to generate quiz answers
-        }
-    }
+	for (var i = 0; i < quizRadio.length; i++) {
+		if (quizRadio[i].checked) {
+			content += quizRadio[i].getAttribute("data-endingsentence"); //these are the attributes used to generate quiz answers
+		}
+	}
 	return content;
 }
-
 
 
 /* 
@@ -159,7 +156,10 @@ function getEndingSentence() {
 */
 function setEndingSentence() {
 	var chargeResults = getEndingSentence();
-    document.getElementById("results_screen").className = "";
+	document.getElementById("results_screen").className = "";
 	document.getElementById("generated_text").innerHTML = chargeResults; 
-
+	var e=document.getElementById("info_screen");
+	if (currentQuestion==7){
+		e.style.display = "none";
+	} else {e.style.display = "block";}
 } 
