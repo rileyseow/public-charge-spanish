@@ -10,8 +10,408 @@
 
 		<title>Public Charge Benefits</title>
 		<meta content="Find out what benefits you are eligible to use under proposed changes to public charge rulings" name="description">
-		<link href="css/style.css" rel="stylesheet">
-		<script async="" src="js/quiz.js" type="text/javascript"></script>
+		<style>
+			/*
+ QUIZ WEBSITE LAYOUT ELEMENTS
+ */
+
+html,body {
+	height: 100% !important;
+	margin: 0;
+	background-color: #fff;
+    color: #333;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.42857;
+	overflow-x: auto;
+	max-width: 100%;
+}
+
+* {
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+
+.quiz-section {
+	padding: 50px 0;
+	text-align: center;
+	height: 100%;
+}
+
+.quiz-section .container {
+	position: relative;
+	z-index: 1;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+
+@media ( max-width: 991px ) {
+	.quiz-section.quiz-fullscreen {
+		height: auto;
+	}
+	.quiz-start-link {
+		display: none;
+	}
+}
+
+.quizintrobox {
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-top: 30px;
+    padding: 11.5px 17px;
+	max-width: 650px;
+  opacity: 0.9;
+}
+
+.footer-section {
+	padding-bottom: 30px;
+	text-align: center;
+}
+
+ img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+ QUIZ WEBSITE CONTENT ELEMENTS
+ */
+ 
+ .p {
+    margin: 0 auto 20px;
+	width: 600px;
+	text-align: middle;
+}
+
+ .h1, .h2, .h3, .h4, .h5, .h6{
+	color: #222;
+	margin-bottom: 10px;
+	line-height: 1.0;
+}
+ 
+.section-heading {
+	position: relative;
+	padding-bottom: 15px;
+	margin: -20px 0 10px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 24px;
+	letter-spacing: 0.05em;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.section-heading:after {
+	content: "";
+	position: relative;
+	left: 0;
+	bottom: 0;
+	display: block;
+	height: 2px;
+	width: 100px;
+	background-color: rgba(0,0,0,0.1);
+	left: 50%;
+	right: 50%;
+	text-align: center;
+	margin-left: -50px;
+}
+
+/* Button */
+.button_header,.button_reset{
+	border:1px solid #720216; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:12px;font-family:arial, helvetica, sans-serif; padding: 18px 18px 18px 18px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
+	 background-color: #A90321; background-image: -webkit-gradient(linear, left top, left bottom, from(#A90321), to(#6D0019));
+	 background-image: -webkit-linear-gradient(top, #A90321, #6D0019);
+	 background-image: -moz-linear-gradient(top, #A90321, #6D0019);
+	 background-image: -ms-linear-gradient(top, #A90321, #6D0019);
+	 background-image: -o-linear-gradient(top, #A90321, #6D0019);
+	 background-image: linear-gradient(to bottom, #A90321, #6D0019);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#A90321, endColorstr=#6D0019);
+}
+
+.button_header:hover{
+	 border:1px solid #45010d;
+	 background-color: #770217; background-image: -webkit-gradient(linear, left top, left bottom, from(#770217), to(#3a000d));
+	 background-image: -webkit-linear-gradient(top, #770217, #3a000d);
+	 background-image: -moz-linear-gradient(top, #770217, #3a000d);
+	 background-image: -ms-linear-gradient(top, #770217, #3a000d);
+	 background-image: -o-linear-gradient(top, #770217, #3a000d);
+	 background-image: linear-gradient(to bottom, #770217, #3a000d);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#770217, endColorstr=#3a000d);
+}
+
+.button {
+	padding: 9px 14px;
+	border-radius: 0;
+	font-family: "Montserrat", sans-serif;
+	font-size: 11px;
+	line-height: 1.819;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+
+/* footer */ 
+
+.list-inline {
+    list-style: outside none;
+    margin-left: -5px;
+    padding-left: 0;
+    list-style-position: left;
+}
+
+ul {
+    list-style-position: outside;
+    display: inline-block;
+    text-align:left;
+}
+
+.questions {
+    background-color: #f6f6f6;
+    margin: 15px 0;
+    padding: 30px;
+    text-align: center;
+}
+
+ul, ol {
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.invisible {
+	display: none;
+	}
+	
+	a, u {
+    text-decoration: none;
+}
+
+a { color: inherit; } 
+
+#lore_brief {
+max-width: 1170px;
+center: middle;
+margin-left: auto;
+margin-right: auto;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+#results_screen { 
+max-width: 1170px;
+center: middle;
+margin-left: auto;
+margin-right: auto;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+/*hover */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+		</style>
+<!-- 		<link href="css/style.css" rel="stylesheet"> -->
+		<script async=""type="text/javascript">
+			//Creation Date: 7/10/2015
+//Description: This program provides a basic quiz application that enables individuals to
+//             create personality quiz websites with no javascript knowledge. All that is 
+//             needed is a basic understanding of HTML and some creativity. 
+
+
+var currentQuestion = 2; //
+
+
+/* 
+	name: startQuiz
+	desc: Removes all elements that are not needed after the
+		   start of the quiz. 
+	parameters: none
+	returns: none
+*/
+function startQuiz() {
+	document.getElementById("charge_brief").className = "invisible";
+	document.getElementById("question-1").className = "question";
+	var startBtn = document.getElementById('startQuizBtn');
+	startBtn.parentNode.removeChild(startBtn);
+	var x = document.getElementById("introbox1");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+
+function endQuiz(){
+	var x = document.getElementById("quiz-questions");
+	var y= document.getElementById("results_screen");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		currentQuestion=4;        
+	}
+}
+
+function endQuizPositive(){
+	currentQuestion=7;        
+}
+/* 
+	name: getNumberOfQuestions
+	desc: Used to dynamically get the  amount of questions 
+		  that have been created on the HTML page. 
+    parameters: none
+    returns: totalQuestions
+*/
+function getNumberOfQuestions() {
+	//QuerySelectorAll has better browser support in exchange for being slightly slower than gEBCN. 
+	var totalQuestions = document.querySelectorAll('#quiz-questions .question').length;
+	return totalQuestions;
+}
+
+
+/* 
+	name: nextQuestion
+	desc: The primary tool for users to control their quiz position and 
+		  executes functions in a way that promotes separation of interests.
+    parameters: none
+    returns: none
+*/
+function nextQuestion() {
+	hideQuestion(currentQuestion);
+	hideAnswerButton();
+	showQuestion(currentQuestion);
+	currentQuestion++;
+}
+
+
+/* 
+	name: setAnswerButton
+	desc: Sets the visibility of the button element required to 
+		  advance through questions to true. 
+    parameters: none
+    returns: none
+*/
+function setAnswerButton() {
+	//yes, that's correct. this is my lazy way of input validation without annoyning users 
+	//(e.g. transition on-click events) on the radio buttons...
+	document.getElementById("confirm_answer").className = "";
+}
+
+
+/* 
+	name: hideAnswerButton
+	desc: Assigns an invisible class (display: none;) to the button element 
+		  required to advance through questions to true. 
+    parameters: none
+    returns: none
+*/
+function hideAnswerButton() {
+	document.getElementById("confirm_answer").className = "invisible";
+}	
+
+
+/* 
+	name: hideQuestion
+	desc: Hides the the question that a user has completed so the space
+	can be swapped with another question. 
+    parameters: id
+    returns: none
+*/
+function hideQuestion(id) {
+	var totalQuestions = getNumberOfQuestions();
+	for (var i = 1; i <= totalQuestions; i++) {
+		if (i !== id) {
+			document.getElementById("question-" + i).className = "question invisible";
+		}
+	}
+}
+
+
+/* 
+	name: showQuestion
+	desc: Will identify current question using ID parameter and
+		  the invisible class free that have been created on the HTML page. 
+    parameters: id
+    returns: none
+*/
+function showQuestion(id) {
+	var totalQuestions = getNumberOfQuestions();
+	if (id <= totalQuestions) {
+		document.getElementById("question-" + id).className = "question";
+	} else {
+		setEndingSentence() //begins the end screen process if id is above total question
+	}
+}
+
+
+
+/* 
+	name: getEndingSentence
+	desc: Handles calculations and provides the necessary information for 
+		  the quiz sentence genernation process to work. 
+    returns: content
+*/
+function getEndingSentence() {
+	var quizRadio = document.getElementsByName("rq");
+	var content = ''; //It's easier to handle if we simply merge all sentences into a string
+	for (var i = 0; i < quizRadio.length; i++) {
+		if (quizRadio[i].checked) {
+			content += quizRadio[i].getAttribute("data-endingsentence"); //these are the attributes used to generate quiz answers
+		}
+	}
+	return content;
+}
+
+
+/* 
+	name: setEndingSentence
+	desc: Collects information and outputs it to the HTML page.
+    parameters: none
+    returns: none
+*/
+function setEndingSentence() {
+	var chargeResults = getEndingSentence();
+	document.getElementById("results_screen").className = "";
+	document.getElementById("generated_text").innerHTML = chargeResults; 
+	var e=document.getElementById("info_screen");
+	if (currentQuestion==7){
+		e.style.display = "none";
+	} else {e.style.display = "block";}
+} 
+		</script>
 
 		<section class="quiz-section quiz-fullscreen section section-dark" id="quiz">
 
