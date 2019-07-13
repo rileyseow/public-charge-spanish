@@ -465,7 +465,7 @@ function setEndingSentence() {
 					<div class="question invisible" id="question-3">
 						<form>
 							<h2 class="section-heading text-center">Do you have, or are you currently applying for any of the following?</h2>
-
+							<div id="non-greencard-status">
 							<p style="font-style: italic">These specific categories determine whether public charge applies </p>
 							<input data-endingsentence="Public charge doesn't apply to you since you are applying for citizenship. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">Citizenship
 							<input data-endingsentence="Public charge doesn't apply to you since you are applying for green card renewal. You may use any benefits for which you qualify. You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">Green Card renewal
@@ -481,7 +481,7 @@ function setEndingSentence() {
 							<input data-endingsentence="Public  charge doesn’t apply for HAIFA applications or to people who have HAIFA status when they adjust status under this category.You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> Adjustment Under Haitian Refugee Immigration Fairness Act (HAIFA)
 							<input data-endingsentence="Public  charge doesn’t apply for CAA applications or to people who have CAA status when they adjust status under this category.You may use any benefits for which you qualify. " name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> Adjustment Under Cuban Adjustment Act (CAA)
 							<input data-endingsentence="" name="rq" onclick="setAnswerButton();" type="radio">None of the above                 
-
+							</div>
 						</form>
 					</div>
 
