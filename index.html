@@ -290,12 +290,12 @@ function endQuiz(){
 	if (x.style.display === "none") {
 		x.style.display = "block";
 	} else {
-		currentQuestion=5;        
+		currentQuestion=6;        
 	}
 }
 
 function endQuizPositive(){
-	currentQuestion=7;        
+	currentQuestion=8;        
 }
 /* 
 	name: getNumberOfQuestions
@@ -485,8 +485,18 @@ function setEndingSentence() {
 						</form>
 					</div>
 
-
 					<div class="question invisible" id="question-4">
+						<form>
+							<h2 class="section-heading text-center">Are you or a family member applying for a green card through a family member in the near future?</h2>
+							<p style="font-style: italic"></p>
+
+							<p style="font-style: italic"></p>
+							<input data-endingsentence="" name="rq" onclick="setAnswerButton();" type="radio">Yes 
+							<input data-endingsentence="Public charge does not apply right now.  If you think you might seek to adjust through a family member in the distant future, consult a qualified immigration attorney." name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio">No
+						</form>
+					</div>
+					
+					<div class="question invisible" id="question-5">
 						<form>
 							<h2 class="section-heading text-center">Where do you or your family plan to apply for a green card or visa from?</h2>
 
