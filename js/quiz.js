@@ -1,8 +1,17 @@
 //Creation Date: 7/10/2015
 
-var currentQuestion = 2;
+var currentQuestion = 1;
 
-/* Removes all elements not needed after the quiz starts. */
+/* If the page is reloaded, makes sure the radio buttons are blank even if they had been selected before the reload. */
+window.onload = function(){
+    theForm1.reset();
+    theForm2.reset();
+    theForm3.reset();
+    theForm4.reset();
+    theForm5.reset();
+}
+
+/* Displays the screen for the first question. Triggered when start button is clicked. */
 function startQuiz() {
     document.getElementById("charge_brief").className = "invisible";
     document.getElementById("question-1").className = "question";
@@ -14,66 +23,80 @@ function startQuiz() {
     } else {
         x.style.display = "none";
     }
-}
-            
-/* Advances to the next question. */
-function skipQuestion(){
-    currentQuestion++;
+    
+    var prevBtn = document.getElementById("prevBtn");
+    prevBtn.style.opacity = 0.4;
+    prevBtn.style.pointerEvents = "none";
 }
 
-/* */
-function endQuiz(){
-    var x = document.getElementById("quiz-questions");
-    /*var y = document.getElementById("results_screen");*/
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
+/* Dynamically gets the amount of questions that have been created on the HTML page. For current version, this function will always return 5. */
+function getNumberOfQuestions() {
+    //QuerySelectorAll has better browser support in exchange for being slightly slower than gEBCN. 
+    return document.querySelectorAll('#quiz-questions .question').length; 
+}
+
+/* Advances to the next question. */
+function nextQuestion() {
+    if (currentQuestion == 1) {
+        var prevBtn = document.getElementById("prevBtn");
+        prevBtn.style.opacity = 1;
+        prevBtn.style.pointerEvents = "auto";
+    }
+    
+    hideQuestion(currentQuestion);
+    hideAnswerButton();
+    if (currentQuestion == 1 && document.getElementById("gc_no").checked) {
+        currentQuestion = 3;
+    } else if ((currentQuestion == 2 && document.getElementById("gc_yes").checked) 
+              || (currentQuestion == 3 && !document.getElementById("noneoftheabove").checked)
+              || (currentQuestion == 4 && document.getElementById("none_famgcapp_no").checked)) {
         currentQuestion = 6;
+    } else {
+        currentQuestion++;
+    }
+    showQuestion(currentQuestion);
+}
+
+/* Goes back to the previous question. */
+function previousQuestion() {
+    var formName = "theForm" + currentQuestion;
+    document.getElementById(formName).reset();
+    
+    if (currentQuestion == 2 || currentQuestion == 3) {
+        var prevBtn = document.getElementById("prevBtn");
+        prevBtn.style.opacity = 0.4;
+        prevBtn.style.pointerEvents = "none";
+    }
+    
+    if (currentQuestion == 3) {
+        hideQuestion(currentQuestion);
+        showQuestion(1);
+        currentQuestion = 1;
+    } else {
+        hideQuestion(currentQuestion);
+        currentQuestion--;    
+        showQuestion(currentQuestion);
     }
 }
 
-/* */
-function endQuizPositive(){
-    currentQuestion = 8;
-}
-
-/* Dynamically gets the amount of questions that have been created on the HTML page. */
-function getNumberOfQuestions() {
-    //QuerySelectorAll has better browser support in exchange for being slightly slower than gEBCN. 
-    return document.querySelectorAll('#quiz-questions .question').length;
-}
-
-/* The primary tool for users to control their quiz position and executes functions in a way that promotes separation of interests. */
-function nextQuestion() {
-    hideQuestion(currentQuestion);
-    hideAnswerButton();
-    showQuestion(currentQuestion);
-    currentQuestion++;
-}
-
-/* Sets the visibility of the button element required to advance through questions to true. */
-function setAnswerButton() {
+/* Shows buttons "previous question" and "next question". */
+function showAnswerButton() {
     //yes, that's correct. this is my lazy way of input validation without annoying users
     //(e.g. transition on-click events) on the radio buttons...
     document.getElementById("confirm_answer").className = "";
 }
 
-/* Assigns an invisible class (display: none;) to the button element required to advance through questions to true. */
+/* Hides buttons "previous question" and "next question". */
 function hideAnswerButton() {
     document.getElementById("confirm_answer").className = "invisible";
 }	
 
-/* Hides the the question that a user has completed so the space can be swapped with another question. */
+/* Hides the question passed as an input parameter. */
 function hideQuestion(id) {
-    var totalQuestions = getNumberOfQuestions();
-    for (var i = 1; i <= totalQuestions; i++) {
-        if (i !== id) {
-            document.getElementById("question-" + i).className = "question invisible";
-        }
-    }
+    document.getElementById("question-" + id).className = "question invisible";
 }
 
-/* Will identify current question using ID parameter and the invisible class free that have been created on the HTML page. */
+/* Shows the question passed as an input parameter. */
 function showQuestion(id) {
     var totalQuestions = getNumberOfQuestions();
     if (id <= totalQuestions) {
@@ -83,7 +106,18 @@ function showQuestion(id) {
     }
 }
 
-/* Handles calculations and provides the necessary information for the quiz sentence generation process to work. */
+/* Triggered once there are no more relevant questions to be asked. Computes and outputs results. */
+function setEndingSentence() {
+    var chargeResults = getEndingSentence(); //see below
+    document.getElementById("results_screen").className = "";
+    document.getElementById("generated_text").innerHTML = chargeResults; 
+    var e = document.getElementById("info_screen");
+    if (currentQuestion == 7){
+        e.style.display = "none";
+    } else {e.style.display = "block";}
+} 
+
+/* Based on previous quiz answers, determines which information is relevant and should be shown on the results page. */
 function getEndingSentence() {
     var quizRadioRQ = document.getElementsByName("rq");
     var quizRadio = [];
@@ -120,14 +154,3 @@ function getEndingSentence() {
     }
     return content;
 }
-
-/* Collects information and outputs it to the HTML page. */
-function setEndingSentence() {
-    var chargeResults = getEndingSentence();
-    document.getElementById("results_screen").className = "";
-    document.getElementById("generated_text").innerHTML = chargeResults; 
-    var e = document.getElementById("info_screen");
-    if (currentQuestion == 7){
-        e.style.display = "none";
-    } else {e.style.display = "block";}
-} 

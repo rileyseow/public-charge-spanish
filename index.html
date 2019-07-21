@@ -32,70 +32,157 @@
                 <div class="container" id="quiz-questions">
 
                     <div class="question invisible" id="question-1">
-                        <form>
+                        <form id="theForm1">
                             <h2 class="section-heading text-center">Do you already have a green card?</h2>
-                            <input id="gc_yes" name="rq" onclick="setAnswerButton();" type="radio"> Yes       
-                            <input id="gc_no" name="rq" onclick="setAnswerButton();skipQuestion()" type="radio"> No
+                            <div class="centerwrap">
+                            <div class="center">
+                                <label class="radioContainer floats"> Yes
+                                    <input id="gc_yes" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radioContainer leftpad floats"> No
+                                    <input id="gc_no" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label>   
+                            </div>
+                            </div>
                         </form>
                     </div>
 
                     <div class="question invisible" id="question-2">
-                        <form>
+                        <form id="theForm2">
                             <h2 class="section-heading text-center">Will you be applying for a family member to get their green card in the next 3 years?</h2>
-                            <input id="famgcapp_yes" name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> Yes
-                            <input id="famgcapp_no" name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> No
+                            <div class="centerwrap">
+                            <div class="center">
+                                <label class="radioContainer floats"> Yes
+                                    <input id="famgcapp_yes" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radioContainer leftpad floats"> No
+                                    <input id="famgcapp_no" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            </div>
                         </form>
                     </div>
 
 
                     <div class="question invisible" id="question-3">
-                        <form>
+                        <form id="theForm3">
                             <h2 class="section-heading text-center">Select a status if you are applying for or have any status listed below.</h2>
 
-                            <p style="font-style: italic">These specific categories determine whether public charge applies </p>
-                            <div id="non-greencard-status">
-                                <input id="citizenship" class="status" name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> Citizenship <br>
-                                <input id="gcrenewal" class="status" name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> Green Card renewal <br>
-                                <input id="dacarenewal" class="status" name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> DACA renewal <br>
-                                <input id="uortvisa" class="status" name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> U or T Visa <br>
-                                <input id="asylumorrefugeestatus" class="status" name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> Asylum or Refugee Status <br>
-                                <input id="tps" class="status" name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> TPS <br>
-                                <input id="vawa" class="status" name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> VAWA <br>
-                                <input id="specialimmigrantjuvenilestatus" class="status" name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> Special Immigrant Juvenile Status <br>
-                                <input id="specialimmigrantvisastatus" class="status" name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> Special Immigrant Visa Status <br>
-                                <input id="gcbasedonutvisavawaorasylum" class="status" name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> Green Card based on U/T visa, VAWA, or Asylum <br>
-                                <input id="adjustmentundernarcara" class="status" name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> Adjustment Under Nicaraguan Adjustment & Central American Relief Act (NACARA) <br>
-                                <input id="adjustmentunderhaifa" class="status" name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> Adjustment Under Haitian Refugee Immigration Fairness Act (HAIFA) <br>
-                                <input id="adjustmentundercaa" class="status" name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> Adjustment Under Cuban Adjustment Act (CAA) <br>
-                                <input id="noneoftheabove" class="status" data-endingsentence="" name="rq" onclick="setAnswerButton();" type="radio"> None of the above <br>            
+                            <p style="font-style: italic">These specific categories determine whether public charge applies. </p> <br>
+                            
+                            <div id="non-greencard-status" class="leftpad">
+                                <label class="radioContainer"> Citizenship
+                                    <input id="citizenship" class="status" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="radioContainer"> Green Card Renewal
+                                    <input id="gcrenewal" class="status" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="radioContainer"> DACA Renewal
+                                    <input id="dacarenewal" class="status" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="radioContainer"> U or T Visa
+                                    <input id="uortvisa" class="status" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="radioContainer"> Asylum or Refugee Status
+                                    <input id="asylumorrefugeestatus" class="status" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="radioContainer"> TPS
+                                    <input id="tps" class="status" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="radioContainer"> VAWA
+                                    <input id="vawa" class="status" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="radioContainer"> Special Immigrant Juvenile Status
+                                    <input id="specialimmigrantjuvenilestatus" class="status" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="radioContainer"> Special Immigrant Visa Status
+                                    <input id="specialimmigrantvisastatus" class="status" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="radioContainer"> Green Card based on U/T visa, VAWA, or Asylum
+                                    <input id="gcbasedonutvisavawaorasylum" class="status" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="radioContainer"> Adjustment Under Nicaraguan Adjustment & Central American Relief Act (NACARA)
+                                    <input id="adjustmentundernarcara" class="status" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="radioContainer"> Adjustment Under Nicaraguan Adjustment & Central American Relief Act (NACARA)
+                                    <input id="adjustmentundernarcara" class="status" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="radioContainer"> Adjustment Under Haitian Refugee Immigration Fairness Act (HAIFA)
+                                    <input id="adjustmentunderhaifa" class="status" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="radioContainer"> Adjustment Under Cuban Adjustment Act (CAA)
+                                    <input id="adjustmentundercaa" class="status" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="radioContainer"> None of the Above
+                                    <input id="noneoftheabove" class="status" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label>     
                             </div>
                         </form>
                     </div>
 
                     <div class="question invisible" id="question-4">
-                        <form>
+                        <form id="theForm4">
                             <h2 class="section-heading text-center">Are you or a family member applying for a green card through a family member in the near future?</h2>
-                            <input id="none_famgcapp_yes" name="rq" onclick="setAnswerButton();" type="radio"> Yes 
-                            <input id="none_famgcapp_no" name="rq" onclick="setAnswerButton();endQuizPositive()" type="radio"> No
+                            <div class="centerwrap">
+                            <div class="center">
+                                <label class="radioContainer floats"> Yes
+                                    <input id="none_famgcapp_yes" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radioContainer leftpad floats"> No
+                                    <input id="none_famgcapp_no" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            </div>
                         </form>
                     </div>
 
                     <div class="question invisible" id="question-5">
-                        <form>
+                        <form id="theForm5">
                             <h2 class="section-heading text-center">Where do you or your family plan to apply for a green card or visa from?</h2>
 
 
                             <p style="font-style: italic">Where you or family apply from can have consequences on how public charge affects you</p>
-                            <input id="none_whereapply_insideus" name="rq" onclick="setAnswerButton();endQuiz()" type="radio"> Inside the U.S.
-                            <input id="none_whereapply_outsideus" name="rq" onclick="setAnswerButton();endQuiz()" type="radio"> Outside the U.S.
-
+                            <div class="centerwrap">
+                            <div class="center">
+                                <label class="radioContainer floats"> Inside the U.S.
+                                    <input id="none_whereapply_insideus" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radioContainer leftpad floats"> Outside the U.S.
+                                    <input id="none_whereapply_outsideus" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            </div>
                         </form>
                     </div>
 
                     <div class="invisible" id="confirm_answer">
                         <br>
                         <br>
-                        <button class="button" onclick="nextQuestion()" type="button">Next Question</button>
+                        <button id="prevBtn" class="button" onclick="previousQuestion()" type="button">Previous Question</button>
+                        <button id="nextBtn" class="button" onclick="nextQuestion()" type="button">Next Question</button>
                     </div>
 
 
