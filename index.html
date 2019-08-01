@@ -48,9 +48,19 @@
                             </div>
                         </form>
                     </div>
-
+                    
+                    <!-- the following is technically not a question though, lol -->
                     <div class="question invisible" id="question-2">
-                        <form id="theForm2">
+                        <div class="centerwrap">
+                            <div class="center">
+                                <p class="moreInfoText">Currently, public charge does <span style="color:red; font-weight:bold;">not</span> affect you unless you go out of the U.S. for 6 months or more.</p>
+                                <p class="moreInfoText">There is no public charge test to renew your green card or to apply for citizenship.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question invisible" id="question-3">
+                        <form id="theForm3">
                             <h2 class="section-heading text-center">Will you be applying for a family member to get their green card in the next 3 years?</h2>
                             <div class="centerwrap">
                             <div class="center">
@@ -66,10 +76,27 @@
                             </div>
                         </form>
                     </div>
+                    
+                    <div class="question invisible" id="question-4">
+                        <form id="theForm4">
+                            <h2 class="section-heading text-center">Is the family member being interviewed in the U.S. or at a consulate abroad?</h2>
+                            <div class="centerwrap">
+                            <div class="center">
+                                <label class="radioContainer floats"> In the U.S.
+                                    <input id="faminterviewUS" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radioContainer leftpad floats"> At a consulate abroad
+                                    <input id="faminterviewconsulate" name="rq" onclick="showAnswerButton();" type="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            </div>
+                        </form>
+                    </div>
 
-
-                    <div class="question invisible" id="question-3">
-                        <form id="theForm3">
+                    <div class="question invisible" id="question-5">
+                        <form id="theForm5">
                             <h2 class="section-heading text-center">Select a status if you are applying for or have any status listed below.</h2>
 
                             <p style="font-style: italic">These specific categories determine whether public charge applies. </p> <br>
@@ -77,10 +104,6 @@
                             <div id="non-greencard-status" class="leftpad">
                                 <label class="radioContainer"> Citizenship
                                     <input id="citizenship" class="status" name="rq" onclick="showAnswerButton();" type="radio">
-                                    <span class="checkmark"></span>
-                                </label><br>
-                                <label class="radioContainer"> Green Card Renewal
-                                    <input id="gcrenewal" class="status" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label><br>
                                 <label class="radioContainer"> DACA Renewal
@@ -139,8 +162,8 @@
                         </form>
                     </div>
 
-                    <div class="question invisible" id="question-4">
-                        <form id="theForm4">
+                    <div class="question invisible" id="question-6">
+                        <form id="theForm6">
                             <h2 class="section-heading text-center">Are you or a family member applying for a green card through a family member in the near future?</h2>
                             <div class="centerwrap">
                             <div class="center">
@@ -157,8 +180,8 @@
                         </form>
                     </div>
 
-                    <div class="question invisible" id="question-5">
-                        <form id="theForm5">
+                    <div class="question invisible" id="question-7">
+                        <form id="theForm7">
                             <h2 class="section-heading text-center">Where do you or your family plan to apply for a green card or visa from?</h2>
 
 
@@ -193,7 +216,7 @@
         
         <section class="endpage" id="info_screen"> 
             <p>   
-                <p style="text-align: left; text-decoration: underline; font-weight: bold; padding-top: 15px;">More on public charge:</p>
+                <p style="text-align: left; text-decoration: underline; font-weight: bold; padding-top: 25px;">More on public charge:</p>
             <div style="text-align:left">
                 <section> 
                     <br> Benefits currently considered for public charge include:  <br> 
@@ -242,12 +265,12 @@
             <section>
                 These changes might never be made. If they are, you will have time to stop these benefits before they are in place.
                 </p>
-            Click <a href="https://www.immigrationadvocates.org/nonprofit/legaldirectory/search?state=CA">HERE</a> to see a list of legal services programs
+            Click <a href="https://www.immigrationadvocates.org/nonprofit/legaldirectory/search?state=CA">HERE</a> to see a list of legal services programs.
             <br>
             Click <a
-                     href="https://www.legalaidsmc.org/contact">HERE</a> to contact the Legal Aid office 
+                     href="https://www.legalaidsmc.org/contact">HERE</a> to contact the Legal Aid office.
             <br>                                                           
-            Click <a href="https://forms.gle/yr32nwuH3evxbxCN7"> HERE</a> to be informed when changes are made to the public charge ruling</a>        
+            Click <a href="https://forms.gle/yr32nwuH3evxbxCN7"> HERE</a> to be informed when changes are made to the public charge ruling.</a>        
 
             </div>
         </section>

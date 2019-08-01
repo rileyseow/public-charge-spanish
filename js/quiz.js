@@ -5,10 +5,11 @@ var currentQuestion = 1;
 /* If the page is reloaded, makes sure the radio buttons are blank even if they had been selected before the reload. */
 window.onload = function(){
     theForm1.reset();
-    theForm2.reset();
     theForm3.reset();
     theForm4.reset();
     theForm5.reset();
+    theForm6.reset();
+    theForm7.reset();
 }
 
 /* Displays the screen for the first question. Triggered when start button is clicked. */
@@ -29,14 +30,15 @@ function startQuiz() {
     prevBtn.style.pointerEvents = "none";
 }
 
-/* Dynamically gets the amount of questions that have been created on the HTML page. For current version, this function will always return 5. */
+/* Dynamically gets the amount of questions that have been created on the HTML page. For current version, this function will always return 7. */
 function getNumberOfQuestions() {
     //QuerySelectorAll has better browser support in exchange for being slightly slower than gEBCN. 
-    return document.querySelectorAll('#quiz-questions .question').length; 
+    return document.querySelectorAll('#quiz-questions .question').length;
 }
 
 /* Advances to the next question. */
 function nextQuestion() {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
     if (currentQuestion == 1) {
         var prevBtn = document.getElementById("prevBtn");
         prevBtn.style.opacity = 1;
@@ -44,13 +46,14 @@ function nextQuestion() {
     }
     
     hideQuestion(currentQuestion);
-    hideAnswerButton();
+    if (!(currentQuestion == 1 && document.getElementById("gc_yes").checked)) hideAnswerButton();
     if (currentQuestion == 1 && document.getElementById("gc_no").checked) {
-        currentQuestion = 3;
-    } else if ((currentQuestion == 2 && document.getElementById("gc_yes").checked) 
-              || (currentQuestion == 3 && !document.getElementById("noneoftheabove").checked)
-              || (currentQuestion == 4 && document.getElementById("none_famgcapp_no").checked)) {
-        currentQuestion = 6;
+        currentQuestion = 5;
+    } else if ((currentQuestion == 3 && document.getElementById("famgcapp_no").checked) 
+              || (currentQuestion == 4)
+              || (currentQuestion == 5 && !document.getElementById("noneoftheabove").checked)
+              || (currentQuestion == 6 && document.getElementById("none_famgcapp_no").checked)) {
+        currentQuestion = 8;
     } else {
         currentQuestion++;
     }
@@ -59,19 +62,21 @@ function nextQuestion() {
 
 /* Goes back to the previous question. */
 function previousQuestion() {
-    var formName = "theForm" + currentQuestion;
-    document.getElementById(formName).reset();
+    if (currentQuestion != 2) { //since question-2 does not have a form
+        var formName = "theForm" + currentQuestion;
+        document.getElementById(formName).reset();
+    }
     
-    if (currentQuestion == 2 || currentQuestion == 3) {
+    if (currentQuestion == 2 || currentQuestion == 5) {
         var prevBtn = document.getElementById("prevBtn");
         prevBtn.style.opacity = 0.4;
         prevBtn.style.pointerEvents = "none";
     }
     
-    if (currentQuestion == 3) {
+    if (currentQuestion == 5) {
         hideQuestion(currentQuestion);
-        showQuestion(1);
         currentQuestion = 1;
+        showQuestion(1);
     } else {
         hideQuestion(currentQuestion);
         currentQuestion--;    
@@ -79,7 +84,7 @@ function previousQuestion() {
     }
 }
 
-/* Shows buttons "previous question" and "next question". */
+/* Shows buttons "previous question" and "next question" buttons. */
 function showAnswerButton() {
     //yes, that's correct. this is my lazy way of input validation without annoying users
     //(e.g. transition on-click events) on the radio buttons...
@@ -89,7 +94,7 @@ function showAnswerButton() {
 /* Hides buttons "previous question" and "next question". */
 function hideAnswerButton() {
     document.getElementById("confirm_answer").className = "invisible";
-}	
+}
 
 /* Hides the question passed as an input parameter. */
 function hideQuestion(id) {
@@ -112,9 +117,7 @@ function setEndingSentence() {
     document.getElementById("results_screen").className = "";
     document.getElementById("generated_text").innerHTML = chargeResults; 
     var e = document.getElementById("info_screen");
-    if (currentQuestion == 7){
-        e.style.display = "none";
-    } else {e.style.display = "block";}
+    e.style.display = "block";
 } 
 
 /* Based on previous quiz answers, determines which information is relevant and should be shown on the results page. */
@@ -129,11 +132,12 @@ function getEndingSentence() {
     }
     
     if (quizRadio[0] == "gc_yes") {
-        if (quizRadio[1] == "famgcapp_yes") content = "Public charge doesn’t affect you unless you go out of the country for more than 6 months. Although public charge doesn’t affect you, you should consult a qualified immigration attorney about your financial situation before filing any immigration papers.";
-        else content = "Public charge doesn’t apply to you unless you leave the U.S. for more than 6 months.  Public charge does not affect applications for citizenship. Talk to an immigration attorney if you plan to leave for 6 months or more.";
+        if (quizRadio[1] == "famgcapp_yes") {
+            if (quizRadio[2] == "faminterviewUS") content = "You and other family members (not the one you are sponsoring) can use any benefits without affecting the one you are sponsoring.";
+            else /* quizRadio[2] == "faminterviewconsulate" */ content = "Public charge might be an issue. Get immigration advice.";
+        } else /* quizRadio[1] == "famgcapp_no" */ content = "Again, public charge does not apply to you unless you leave the U.S. for more than 6 months.  Public charge does not affect applications for citizenship. Talk to an immigration attorney if you plan to leave for 6 months or more.";
     } else { //quizRadio[0] == "gc_no"
         if (quizRadio[1] == "citizenship") content = "Public charge doesn't apply to you since you are applying for citizenship. You may use any benefits for which you qualify.";
-        else if (quizRadio[1] == "gcrenewal") content = "Public charge doesn't apply to you since you are applying for green card renewal. You may use any benefits for which you qualify. You may use any benefits for which you qualify.";
         else if (quizRadio[1] == "dacarenewal") content = "Public charge doesn’t apply for DACA renewal applications or to people who have DACA when they adjust status under this category. You may use any benefits for which you qualify.";
         else if (quizRadio[1] == "uortvisa") content = "Public charge doesn’t apply for U or T Visa applications or to people who have U or T visas when they adjust status under this category. You may use any benefits for which you qualify.";
         else if (quizRadio[1] == "asylumorrefugeestatus") content = "Public charge doesn’t apply for Asylum or Refugee applications or to people who have Asylum or Refugee status when they adjust status under this category. You may use any benefits for which you qualify.";

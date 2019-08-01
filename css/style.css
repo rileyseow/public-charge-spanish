@@ -49,6 +49,7 @@ html,body {
     margin-top: 30px;
     padding: 11.5px 17px;
 	max-width: 650px;
+    font-size: 14pt;
   /*opacity: 0.9;*/
 }
 
@@ -351,4 +352,16 @@ a {
 
 .centerwrap {
     text-align: center;
+}
+
+#generated_text {
+    font-size: 15pt;
+}
+
+.moreInfoText {
+    font-size: 15pt;
+}
+
+#noneoftheabove {
+    margin-bottom: 10vw;
 }
