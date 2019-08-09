@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
 
-    <title>Public Charge Benefits</title>
+    <title>Beneficios de Carga Pública</title>
     <meta content="Find out what benefits you are eligible to use under proposed changes to public charge rulings" name="description">
     
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -18,9 +18,9 @@
         <div class="container">
 
             <div id ="introbox1" class="quizintrobox">
-                <p><b>Find out what benefits you are eligible to use under proposed changes to public charge rulings. No personal information will be stored.</b></p>
+                <p><b>Descubra qué beneficios es elegible para usar bajo los cambios propuestos a las resoluciones de carga pública. No se almacenará información personal.</b></p>
 
-                    <button class="button_header" id="startQuizBtn" onclick="startQuiz();document.getElementById('footer');" type="button">Start Screening</button>
+                    <button class="button_header" id="startQuizBtn" onclick="startQuiz();document.getElementById('footer');" type="button">Inicio</button>
             </div>
         </div>
 
@@ -33,10 +33,10 @@
 
                     <div class="question invisible" id="question-1">
                         <form id="theForm1">
-                            <h2 class="section-heading text-center">Do you already have a green card?</h2>
+                            <h2 class="section-heading text-center">¿Eres residente permanente?</h2>
                             <div class="centerwrap">
                             <div class="center">
-                                <label class="radioContainer floats"> Yes
+                                <label class="radioContainer floats"> Sí
                                     <input id="gc_yes" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label>
@@ -53,18 +53,18 @@
                     <div class="question invisible" id="question-2">
                         <div class="centerwrap">
                             <div class="center">
-                                <p class="moreInfoText">Currently, public charge does <span style="color:red; font-weight:bold;">not</span> affect you unless you go out of the U.S. for 6 months or more.</p>
-                                <p class="moreInfoText">There is no public charge test to renew your green card or to apply for citizenship.</p>
+                                <p class="moreInfoText">Actualmente, la carga pública <span style="color:red; font-weight:bold;">no</span> le afecta a menos que salga de los Estados Unidos por seis meses o más.</p>
+                                <p class="moreInfoText">No hay una prueba de carga pública para renovar su tarjeta verde o para solicitar la ciudadanía.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="question invisible" id="question-3">
                         <form id="theForm3">
-                            <h2 class="section-heading text-center">Will you be applying for a family member to get their green card in the next 3 years?</h2>
+                            <h2 class="section-heading text-center">¿Solicitará que un miembro de su familia conseguirá una tarjeta verde en los próximos 3 años?</h2>
                             <div class="centerwrap">
                             <div class="center">
-                                <label class="radioContainer floats"> Yes
+                                <label class="radioContainer floats"> Sí
                                     <input id="famgcapp_yes" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label>
@@ -79,14 +79,14 @@
                     
                     <div class="question invisible" id="question-4">
                         <form id="theForm4">
-                            <h2 class="section-heading text-center">Is the family member being interviewed in the U.S. or at a consulate abroad?</h2>
+                            <h2 class="section-heading text-center">¿Se está entrevistando al miembro de la familia en los EE. UU. O en un consulado extranjero?</h2>
                             <div class="centerwrap">
                             <div class="center">
-                                <label class="radioContainer floats"> In the U.S.
+                                <label class="radioContainer floats"> En los EE. UU.
                                     <input id="faminterviewUS" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label>
-                                <label class="radioContainer leftpad floats"> At a consulate abroad
+                                <label class="radioContainer leftpad floats"> En un consulado extranjero
                                     <input id="faminterviewconsulate" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label>
@@ -97,64 +97,60 @@
 
                     <div class="question invisible" id="question-5">
                         <form id="theForm5">
-                            <h2 class="section-heading text-center">Select a status if you are applying for or have any status listed below.</h2>
+                            <h2 class="section-heading text-center">¿Está solicitando o tiene alguno de estos estados?</h2>
 
-                            <p style="font-style: italic">These specific categories determine whether public charge applies. </p> <br>
+                            <p style="font-style: italic">Estas categorías específicas determinan si se aplica la carga pública. </p> <br>
                             
                             <div id="non-greencard-status" class="leftpad">
-                                <label class="radioContainer"> Citizenship
+                                <label class="radioContainer"> Ciudadanía
                                     <input id="citizenship" class="status" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label><br>
-                                <label class="radioContainer"> DACA Renewal
+                                <label class="radioContainer"> DACA 
                                     <input id="dacarenewal" class="status" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label><br>
-                                <label class="radioContainer"> U or T Visa
+                                <label class="radioContainer"> Visa U o T
                                     <input id="uortvisa" class="status" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label><br>
-                                <label class="radioContainer"> Asylum or Refugee Status
+                                <label class="radioContainer"> Asilo / Estatus de refugiado
                                     <input id="asylumorrefugeestatus" class="status" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label><br>
-                                <label class="radioContainer"> TPS
+                                <label class="radioContainer"> Estado de protección temporal (TPS)
                                     <input id="tps" class="status" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label><br>
-                                <label class="radioContainer"> VAWA
+                                <label class="radioContainer"> VAWA auto-peticionario
                                     <input id="vawa" class="status" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label><br>
-                                <label class="radioContainer"> Special Immigrant Juvenile Status
+                                <label class="radioContainer"> Estatus Especial de Inmigrante Juvenil (SIJS)
                                     <input id="specialimmigrantjuvenilestatus" class="status" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label><br>
-                                <label class="radioContainer"> Special Immigrant Visa Status
+                                <label class="radioContainer"> Estatus Especial de Inmigrante VISA
                                     <input id="specialimmigrantvisastatus" class="status" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label><br>
-                                <label class="radioContainer"> Green Card based on U/T visa, VAWA, or Asylum
+                                <label class="radioContainer"> Tarjeta verde basada en estado Visa U o T, Estatus Especial de Inmigrante Juvenil (SIJS), VAWA auto-peticionario, o Asilo
                                     <input id="gcbasedonutvisavawaorasylum" class="status" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label><br>
-                                <label class="radioContainer"> Adjustment Under Nicaraguan Adjustment & Central American Relief Act (NACARA)
+                                <label class="radioContainer"> Ajuste bajo NACARA (nicaragüense / centroamericana)
                                     <input id="adjustmentundernarcara" class="status" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label><br>
-                                <label class="radioContainer"> Adjustment Under Nicaraguan Adjustment & Central American Relief Act (NACARA)
-                                    <input id="adjustmentundernarcara" class="status" name="rq" onclick="showAnswerButton();" type="radio">
-                                    <span class="checkmark"></span>
-                                </label><br>
-                                <label class="radioContainer"> Adjustment Under Haitian Refugee Immigration Fairness Act (HAIFA)
+                                <label class="radioContainer"> Ajuste bajo HRIFA (refugiado haitiano)
                                     <input id="adjustmentunderhaifa" class="status" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label><br>
-                                <label class="radioContainer"> Adjustment Under Cuban Adjustment Act (CAA)
+                                <label class="radioContainer"> Ajuste bajo CAA (Ley de Ajuste Cubano)
                                     <input id="adjustmentundercaa" class="status" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label><br>
-                                <label class="radioContainer"> None of the Above
+                                <label class="radioContainer"> Ninguna de las anteriores
                                     <input id="noneoftheabove" class="status" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label>     
@@ -164,10 +160,10 @@
 
                     <div class="question invisible" id="question-6">
                         <form id="theForm6">
-                            <h2 class="section-heading text-center">Are you or a family member applying for a green card through a family member in the near future?</h2>
+                            <h2 class="section-heading text-center">¿Está Ud. solicitando una tarjeta verde a través de una petición basada en familia en los próximos años?</h2>
                             <div class="centerwrap">
                             <div class="center">
-                                <label class="radioContainer floats"> Yes
+                                <label class="radioContainer floats"> Sí
                                     <input id="none_famgcapp_yes" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label>
@@ -182,17 +178,17 @@
 
                     <div class="question invisible" id="question-7">
                         <form id="theForm7">
-                            <h2 class="section-heading text-center">Where do you or your family plan to apply for a green card or visa from?</h2>
+                            <h2 class="section-heading text-center">¿De dónde planea usted o su familia solicitar una tarjeta verde o visa?</h2>
 
 
-                            <p style="font-style: italic">Where you or family apply from can have consequences on how public charge affects you</p>
+                            <p style="font-style: italic">Donde usted o su familia solicita puede tener consecuencias sobre cómo afectar la carga pública.</p>
                             <div class="centerwrap">
                             <div class="center">
-                                <label class="radioContainer floats"> Inside the U.S.
+                                <label class="radioContainer floats"> En los EE. UU.
                                     <input id="none_whereapply_insideus" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label>
-                                <label class="radioContainer leftpad floats"> Outside the U.S.
+                                <label class="radioContainer leftpad floats"> Fuera de los EE. UU.
                                     <input id="none_whereapply_outsideus" name="rq" onclick="showAnswerButton();" type="radio">
                                     <span class="checkmark"></span>
                                 </label>
@@ -204,58 +200,58 @@
                     <div class="invisible" id="confirm_answer">
                         <br>
                         <br>
-                        <button id="prevBtn" class="button" onclick="previousQuestion()" type="button">Previous Question</button>
-                        <button id="nextBtn" class="button" onclick="nextQuestion()" type="button">Next Question</button>
+                        <button id="prevBtn" class="button" onclick="previousQuestion()" type="button">Pregunta Anterior</button>
+                        <button id="nextBtn" class="button" onclick="nextQuestion()" type="button">Siguiente Pregunta</button>
                     </div>
 
 
             <div class="invisible" id="results_screen">
-                <h2 class="section-heading text-center">How will public charge affect you?</h2>
+                <h2 class="section-heading text-center">¿Cómo te afectará la carga pública?</h2>
 
         <div id="generated_text"></div>
         
         <section class="endpage" id="info_screen"> 
             <p>   
-                <p style="text-align: left; text-decoration: underline; font-weight: bold; padding-top: 25px;">More on public charge:</p>
+                <p style="text-align: left; text-decoration: underline; font-weight: bold; padding-top: 25px;">Más sobre la carga pública:</p>
             <div style="text-align:left">
                 <section> 
-                    <br> Benefits currently considered for public charge include:  <br> 
+                    <br> Los beneficios actualmente considerados para la carga pública incluyen:  <br> 
                     <ul>
                         <li><div class="tooltip">SSI
-                            <span class="tooltiptext">Supplemental Security Income provides cash to meet basic needs for aged, blind, and disabled people, who have little or no income.</span>
+                            <span class="tooltiptext">El Ingreso de Seguridad Suplementario proporciona efectivo para satisfacer las necesidades básicas de las personas mayores, ciegas y discapacitadas, que tienen pocos o ningún ingreso.</span>
                             </div></li>
 
-                        <li><div class="tooltip">General Assistance
-                            <span class="tooltiptext">A welfare program that benefit adults without dependents.</span>
+                        <li><div class="tooltip">Asistencia General
+                            <span class="tooltiptext">Un programa de bienestar que beneficia a adultos sin dependientes.</span>
                             </div></li>
 
                         <li><div class="tooltip">CalWORKS
-                            <span class="tooltiptext">CalWORKs is a public assistance program that provides cash aid and services to eligible families that have a child(ren) in the home. </span> </div></li>
+                            <span class="tooltiptext">CalWORKs es un programa de asistencia pública que proporciona asistencia y servicios monetarios a familias elegibles que tienen un(os) hijo(s) en hogar.</span> </div></li>
 
                         <li><div class="tooltip">CAPI
-                            <span class="tooltiptext">Cash Assistance Program for Immigrants is a program that provides money to people who can’t get SSI because of their immigration status. You must be an aged, blind, or disabled California resident. </span> </div></li>
+                            <span class="tooltiptext">El Programa de Asistencia Efectiva para Inmigrantes es un programa que proporciona efectivo a las personas que no pueden recibir SSI debido a sus estados migratorios. Para recibir beneficios de este programa, debe ser un residente de California anciano, ciego o discapacitado.</span> </div></li>
 
-                        <li>Long-term care paid by Medicaid, such as nursing homes</li>
+                        <li>Cuidado a largo plazo pagada por Medicaid, como hogares de ancianos</li>
 
                     </ul>
                     <section>
-                        Use of certain benefits is only one factor.  Immigration will also consider your health, age, education, skills, employment, current income and sponsor’s income when deciding if you will be a public charge.
+                        El uso de ciertos beneficios es solo un factor. Inmigración también tendrá en cuenta su salud, edad, educación, habilidades, empleo, ingresos actuales y ingresos del patrocinador al decidir si será un cargo público.
                     </section>
                 </section>
 
                 <section>
 
-                    <br>Proposed changes to public charge will likely consider: <br>
+                    <br>Los cambios propuestos a la carga pública probablemente considerarán: <br>
                     <ul>
-                        <li> <div class="tooltip">SNAP/food stamps
-                            <span class="tooltiptext">SNAP is a federal nutrition program that can be used to purchase food. SNAP benefits are given to you each month on an EBT plastic card.</span>
+                        <li> <div class="tooltip">SNAP/cupones de alimentos
+                            <span class="tooltiptext">SNAP es un programa de nutrición federal que se puede usar para comprar alimentos. Los beneficios de SNAP se le proporcionan cada mes en una tarjeta de plástico EBT.</span>
                             </div> </li>
-                        <li>Non-emergency Medicaid</li>
-                        <li> <div class="tooltip">Federal housing/Section 8
-                            <span class="tooltiptext">A program providing financial assistance for any housing that meets the requirements of the program.</span>
+                        <li>Medicaid de no emergencia</li>
+                        <li> <div class="tooltip">Alojamiento Federal/Sección 8
+                            <span class="tooltiptext">Un programa que proporciona asistencia financiera para cualquier hogar que cumpla con los requisitos del programa.</span>
                             </div></li>
-                        <li> <div class="tooltip">Medicare Part D subsidies
-                            <span class="tooltiptext">Medicare Part D is a voluntary prescription drug benefit for people with Medicare, provided through private plans approved by the federal government. It can supplement Medicare.</span>
+                        <li> <div class="tooltip">Subsidios de la Parte D de Medicare
+                            <span class="tooltiptext">La Parte D de Medicare es un beneficio voluntario de drogas prescritas para personas con Medicare, proporcionado a través de planes privados apropados por el gobierno federal. Puede complementar a Medicare.</span>
                             </div></li>
                     </ul> 
                 </section>
@@ -263,14 +259,14 @@
             </div>
 
             <section>
-                These changes might never be made. If they are, you will have time to stop these benefits before they are in place.
+                Es posible que estos cambios nunca se realicen. Si se realizan los cambios, tendrá tiempo para detener estos beneficios antes de que estén vigentes.
                 </p>
-            Click <a href="https://www.immigrationadvocates.org/nonprofit/legaldirectory/search?state=CA">HERE</a> to see a list of legal services programs.
+            Haga clic <a href="https://www.immigrationadvocates.org/nonprofit/legaldirectory/search?state=CA">AQUÍ</a> para ver una lista de programas de servicios legales.
             <br>
-            Click <a
-                     href="https://www.legalaidsmc.org/contact">HERE</a> to contact the Legal Aid office.
+            Haga clic <a
+                     href="https://www.legalaidsmc.org/contact">AQUÍ</a> para comunicarse con la oficina de Asistencia Legal.
             <br>                                                           
-            Click <a href="https://forms.gle/yr32nwuH3evxbxCN7"> HERE</a> to be informed when changes are made to the public charge ruling.</a>        
+            Haga clic <a href="https://forms.gle/yr32nwuH3evxbxCN7">AQUÍ</a> ser informado cuando se realicen cambios a la decisión de carga pública.</a>        
 
             </div>
         </section>
