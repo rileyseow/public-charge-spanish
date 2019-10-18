@@ -145,7 +145,7 @@ function getEndingSentence() {
     if (quizRadio[0] == "gc_yes") {
         if (quizRadio[1] == "famgcapp_yes") {
             if (quizRadio[2] == "faminterviewUS") content = "Usted y otros miembros de la familia (no el que está patrocinando) pueden usar cualquier beneficio sin afectar al que está patrocinando.";
-            else /* quizRadio[2] == "faminterviewconsulate" */ content = "La carga pública podría ser un problema. Obtenga consejos de inmigración.";    
+            else /* quizRadio[2] == "faminterviewconsulate" */ content = "La carga pública podría ser un problema. Hable con un abogado de inmigración sobre su caso.";    
         } else /* quizRadio[1] == "famgcapp_no" */ content = "Nuevamente, la carga pública no se aplica a usted a menos que salga de los EE. UU. por más de 6 meses. La carga pública no afecta las solicitudes de ciudadanía. Hable con un abogado de inmigración si planea salir del país por 6 meses o mas.";
     } else { //quizRadio[0] == "gc_no"
         if (quizRadio[1] == "famgcapp_no") {
