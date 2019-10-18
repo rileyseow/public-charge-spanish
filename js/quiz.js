@@ -146,7 +146,7 @@ function getEndingSentence() {
         if (quizRadio[1] == "famgcapp_yes") {
             if (quizRadio[2] == "faminterviewUS") content = "Usted y otros miembros de la familia (no el que está patrocinando) pueden usar cualquier beneficio sin afectar al que está patrocinando.";
             else /* quizRadio[2] == "faminterviewconsulate" */ content = "La carga pública podría ser un problema. Obtenga consejos de inmigración.";    
-        } else /* quizRadio[1] == "famgcapp_no" */ content = "Nuevamente, la carga pública no se aplica a usted a menos que salga de los EE. UU. por más de 6 meses. La carga pública no afecta las solicitudes de ciudadanía. Hable con un abogado de inmigración si planea irse por 6 meses o más.";
+        } else /* quizRadio[1] == "famgcapp_no" */ content = "Nuevamente, la carga pública no se aplica a usted a menos que salga de los EE. UU. por más de 6 meses. La carga pública no afecta las solicitudes de ciudadanía. Hable con un abogado de inmigración si planea salir del país por 6 meses o mas.";
     } else { //quizRadio[0] == "gc_no"
         if (quizRadio[1] == "famgcapp_no") {
             if (quizRadio[2] == "citizenship") {
@@ -175,7 +175,7 @@ function getEndingSentence() {
         else if (quizRadio[1] == "adjustmentundercaa") content = "La carga pública no se aplica a las solicitudes de CAA ni a las personas que tienen el estado de CAA cuando ajustan el estado en esta categoría. Puede usar cualquier beneficio para el que califique.";
         else { //quizRadio[1] == "noneoftheabove"
             if (quizRadio[2] == "none_famgcapp_yes") {
-                if (quizRadio[3] == "none_whereapply_insideus") content = "Se puede aplicar una prueba de carga pública, pero solo contarían unos pocos beneficios que recibe un solicitante. Aún es seguro obtener beneficios de Medi-Cal y CalFresh / cupones de alimentos. Los miembros elegibles de la familia pueden usar cualquier beneficio para el que califiquen. El uso de ciertos beneficios es solo un factor. En esta situación, la inmigración también tendrá en cuenta su salud, edad, educación, habilidades, empleo, ingresos actuales y ingresos del patrocinador al decidir si será un cargo público.";
+                if (quizRadio[3] == "none_whereapply_insideus") content = "Se puede aplicar una prueba de carga pública, pero solo contarían unos pocos beneficios que recibe un solicitante. Aún es seguro obtener beneficios de Medi-Cal y CalFresh/estampillas de comida. Los miembros elegibles de la familia pueden usar cualquier beneficio para el que califiquen. El uso de ciertos beneficios es solo un factor. En esta situación, inmigración también tendrá en cuenta su salud, edad, educación, habilidades, empleo, ingresos actuales e ingresos del patrocinador al decidir si será una carga pública.";
                 else /* quizRadio[3] == "none_whereapply_outsideus" */ content = "Se aplica una prueba de carga pública en esta situación. Consulte a un abogado calificado sobre esto.";
             } else /* quizRadio[2] == "none_famgcapp_no" */ content = "No hay una prueba de carga pública porque no está solicitando ningún cambio de inmigración. Si cree que podría intentar solicitarse a través de un miembro de su familia en el futuro, consulte a un abogado de inmigración calificado.";
         }
